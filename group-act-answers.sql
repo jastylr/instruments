@@ -11,7 +11,7 @@ GROUP BY username;
 
 # Get the total number of drum sets used by users
 SELECT COUNT(instrument_types.id) as total FROM instruments
-LEFT JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
+JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
 WHERE instrument_types.type = 'Drums';
 
 # Get the full names of all people who play piano
@@ -38,4 +38,7 @@ FROM instruments
 JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
 WHERE instrument_types.type = 'Guitar';
 
-
+SELECT CONCAT(users.first_name, " ", users.last_name) FROM users
+JOIN instruments ON users.id = instruments.user_id
+JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
+WHERE instrument_types.type = 'Saxophone';
