@@ -3,7 +3,7 @@
 SELECT first_name, last_name, email FROM users WHERE id = 2;
 
 # Get a list of each user and the number of instruments that they own. Display the
-# user's full nameinstruments as a single field instead of separate first and last names.
+# full name of the user as a single field instead of separate first and last names.
 SELECT CONCAT(first_name, " ", last_name) as username, instrument_types.type, COUNT(instruments.id) FROM users
 JOIN instruments ON users.id = instruments.user_id
 JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
