@@ -26,7 +26,7 @@ SELECT SUM(purchase_price) as sum FROM instruments
 JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
 WHERE instrument_types.type = 'Guitar';
 
-# Get type and sum of the purchase price for all instruments purchased between January 1, 1987 and today's date
+# Get type and sum of the purchase price for all instruments purchased between January 1, 1987 and today\'s date
 SELECT instrument_types.type, SUM(purchase_price) as sum FROM instruments
 JOIN instrument_types ON instruments.instrument_type_id = instrument_types.id
 WHERE purchase_date BETWEEN '1987-01-01' AND NOW()
